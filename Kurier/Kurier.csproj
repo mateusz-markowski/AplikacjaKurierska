@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{163BC4E6-8336-462F-A8CA-9EA6638E59BB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kurier</RootNamespace>
+    <AssemblyName>Kurier</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\main.css" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Menu\CentrKurier\OknoPrzypisywaniaKurieraDoPaczki.aspx" />
+    <Content Include="Views\Menu\CentrKurier\OknoListyKurierow.aspx" />
+    <Content Include="Views\Menu\Kurier\LogowanieKurier.aspx" />
+    <Content Include="Views\Menu\Kurier\MenuGlowneKurier.aspx" />
+    <Content Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx" />
+    <Content Include="Views\Menu\Kurier\OknoSamochoduKuriera.aspx" />
+    <Content Include="Views\Menu\OknoNajczestszeMiasta.aspx" />
+    <Content Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx" />
+    <Content Include="Views\Menu\Nadawca\MenuGlowneNadawcy.aspx" />
+    <Content Include="Views\Menu\MenuGlowneCentrala.aspx" />
+    <Content Include="Main.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoEdycjiSamochodu.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoListySamochodow.aspx" />
+    <Content Include="Views\Menu\OknoLogowanieCentrali.aspx" />
+    <Content Include="Views\Menu\Nadawca\OknoLogowanieKlient.aspx" />
+    <Content Include="Views\Menu\Paczki\OknoNadaniePaczki.aspx" />
+    <Content Include="Views\Menu\OknoNajczestsiKlienci.aspx" />
+    <Content Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx" />
+    <Content Include="Views\SzablonStrony.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\Presenter\ICMKurierzy.cs" />
+    <Compile Include="Interfaces\Presenter\ICMSamochody.cs" />
+    <Compile Include="Interfaces\Presenter\ICMPaczki.cs" />
+    <Compile Include="Interfaces\Presenter\ICMStatystyka.cs" />
+    <Compile Include="Interfaces\Presenter\ICMLogowanie.cs" />
+    <Compile Include="Interfaces\Model\IMStatystyka.cs" />
+    <Compile Include="Interfaces\Presenter\IPKlient.cs" />
+    <Compile Include="Interfaces\Presenter\IPKurier.cs" />
+    <Compile Include="Interfaces\View\IVKlient.cs" />
+    <Compile Include="Migrations\201701111811367_init.cs" />
+    <Compile Include="Migrations\201701111811367_init.Designer.cs">
+      <DependentUpon>201701111811367_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701121037153_test.cs" />
+    <Compile Include="Migrations\201701121037153_test.Designer.cs">
+      <DependentUpon>201701121037153_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701182206525_2.cs" />
+    <Compile Include="Migrations\201701182206525_2.Designer.cs">
+      <DependentUpon>201701182206525_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701182316437_1.cs" />
+    <Compile Include="Migrations\201701182316437_1.Designer.cs">
+      <DependentUpon>201701182316437_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701182331380_test1.cs" />
+    <Compile Include="Migrations\201701182331380_test1.Designer.cs">
+      <DependentUpon>201701182331380_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataAccess\StatystykiModel.cs" />
+    <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuthUzytkownika.cs" />
+    <Compile Include="Interfaces\Model\IMPaczki.cs" />
+    <Compile Include="Interfaces\Model\IMUzytkownicy.cs" />
+    <Compile Include="Models\Context\ApplicationContext.cs" />
+    <Compile Include="Interfaces\Model\IMSamochody.cs" />
+    <Compile Include="Interfaces\Model\IMKurierzy.cs" />
+    <Compile Include="Models\DataAccess\PaczkaModel.cs" />
+    <Compile Include="Models\DataAccess\SamochodyModel.cs" />
+    <Compile Include="Models\DataAccess\KurierzyModel.cs" />
+    <Compile Include="Models\DTO\Adres.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneKlienta.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuth.cs" />
+    <Compile Include="Models\DTO\Paczka\Status.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneKuriera.cs" />
+    <Compile Include="Models\DTO\Paczka\DanePaczki.cs" />
+    <Compile Include="Models\DTO\Samochod\DaneSamochodu.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneUzytkownika.cs" />
+    <Compile Include="Models\DTO\Statystyka\ObciazenieKurierow.cs" />
+    <Compile Include="Models\DTO\Statystyka\StatystykaKlientow.cs" />
+    <Compile Include="Models\DTO\Statystyka\StatystykaObszaru.cs" />
+    <Compile Include="Models\DTO\Statystyka\StatystykaPaczek.cs" />
+    <Compile Include="Interfaces\View\IVCentralaKurierzy.cs" />
+    <Compile Include="Interfaces\View\IVCentralaLogowanie.cs" />
+    <Compile Include="Interfaces\View\IVCentralaPaczki.cs" />
+    <Compile Include="Interfaces\View\IVCentralaSamochody.cs" />
+    <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
+    <Compile Include="Interfaces\View\IVKurier.cs" />
+    <Compile Include="Presenters\Atrapa.cs" />
+    <Compile Include="Presenters\CentralaManagera\KurierzyCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\KurierzyCM\KurierzyPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\KurierzyCM\ListaKurierow.cs" />
+    <Compile Include="Presenters\CentralaManagera\Logowanie\Logowanie.cs" />
+    <Compile Include="Presenters\CentralaManagera\Logowanie\LogowaniePrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\ListaPaczek.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\Paczka.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\PaczkiPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\ListaSamochodow.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\Samochod.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\SamochodyPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\Serwis.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\Klient.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\Paczka.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\StatystykiPrezenter.cs" />
+    <Compile Include="Presenters\KlientManagera\Administracja.cs" />
+    <Compile Include="Presenters\KlientManagera\KlientPrezenter.cs" />
+    <Compile Include="Presenters\KlientManagera\Paczka.cs" />
+    <Compile Include="Presenters\KurierManagera\Administracja.cs" />
+    <Compile Include="Presenters\KurierManagera\KurierPrezenter.cs" />
+    <Compile Include="Presenters\KurierManagera\ListaZlecen.cs" />
+    <Compile Include="Presenters\KurierManagera\Paczka.cs" />
+    <Compile Include="Presenters\KurierManagera\Samochod.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Views\Menu\CentrKurier\OknoPrzypisywaniaKurieraDoPaczki.aspx.cs">
+      <DependentUpon>OknoPrzypisywaniaKurieraDoPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoPrzypisywaniaKurieraDoPaczki.aspx.designer.cs">
+      <DependentUpon>OknoPrzypisywaniaKurieraDoPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoListyKurierow.aspx.cs">
+      <DependentUpon>OknoListyKurierow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoListyKurierow.aspx.designer.cs">
+      <DependentUpon>OknoListyKurierow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx.cs">
+      <DependentUpon>OknoSzczegolowKuriera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowKuriera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\VCentralaKurier.cs" />
+    <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.cs">
+      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.designer.cs">
+      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Kurier\MenuGlowneKurier.aspx.cs">
+      <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Kurier\MenuGlowneKurier.aspx.designer.cs">
+      <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Kurier\OknoSamochoduKuriera.aspx.cs">
+      <DependentUpon>OknoSamochoduKuriera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Kurier\OknoSamochoduKuriera.aspx.designer.cs">
+      <DependentUpon>OknoSamochoduKuriera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Kurier\VKurier.cs" />
+    <Compile Include="Views\Menu\OknoNajczestszeMiasta.aspx.cs">
+      <DependentUpon>OknoNajczestszeMiasta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoNajczestszeMiasta.aspx.designer.cs">
+      <DependentUpon>OknoNajczestszeMiasta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx.cs">
+      <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx.designer.cs">
+      <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx.cs">
+      <DependentUpon>OknoPrzypisaniaKuriera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx.designer.cs">
+      <DependentUpon>OknoPrzypisaniaKuriera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx.cs">
+      <DependentUpon>OknoWyslaniaZleceniaDoSerwisu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx.designer.cs">
+      <DependentUpon>OknoWyslaniaZleceniaDoSerwisu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx.cs">
+      <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Nadawca\MenuGlowneNadawcy.aspx.cs">
+      <DependentUpon>MenuGlowneNadawcy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Nadawca\MenuGlowneNadawcy.aspx.designer.cs">
+      <DependentUpon>MenuGlowneNadawcy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.cs">
+      <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.designer.cs">
+      <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoEdycjiSamochodu.aspx.cs">
+      <DependentUpon>OknoEdycjiSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoEdycjiSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoEdycjiSamochodu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoListySamochodow.aspx.cs">
+      <DependentUpon>OknoListySamochodow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoListySamochodow.aspx.designer.cs">
+      <DependentUpon>OknoListySamochodow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\OknoLogowanieCentrali.aspx.cs">
+      <DependentUpon>OknoLogowanieCentrali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoLogowanieCentrali.aspx.designer.cs">
+      <DependentUpon>OknoLogowanieCentrali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Nadawca\OknoLogowanieKlient.aspx.cs">
+      <DependentUpon>OknoLogowanieKlient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Nadawca\OknoLogowanieKlient.aspx.designer.cs">
+      <DependentUpon>OknoLogowanieKlient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\OknoNadaniePaczki.aspx.cs">
+      <DependentUpon>OknoNadaniePaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\OknoNadaniePaczki.aspx.designer.cs">
+      <DependentUpon>OknoNadaniePaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\OknoNajczestsiKlienci.aspx.cs">
+      <DependentUpon>OknoNajczestsiKlienci.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoNajczestsiKlienci.aspx.designer.cs">
+      <DependentUpon>OknoNajczestsiKlienci.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx.cs">
+      <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx.cs">
+      <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Paczki\VCentralaPaczki.cs" />
+    <Compile Include="Views\Menu\Samochody\VCentralaSamochody.cs" />
+    <Compile Include="Views\SzablonStrony.aspx.cs">
+      <DependentUpon>SzablonStrony.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SzablonStrony.aspx.designer.cs">
+      <DependentUpon>SzablonStrony.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\VCentralaStatystyka.cs" />
+    <Compile Include="Views\Menu\Nadawca\VKlient.cs" />
+    <Compile Include="Views\Menu\VMenuGlowne.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\VLogowanieCentrali.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701111811367_init.resx">
+      <DependentUpon>201701111811367_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701121037153_test.resx">
+      <DependentUpon>201701121037153_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701182206525_2.resx">
+      <DependentUpon>201701182206525_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701182316437_1.resx">
+      <DependentUpon>201701182316437_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701182331380_test1.resx">
+      <DependentUpon>201701182331380_test1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58556</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58556/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
